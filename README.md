@@ -66,7 +66,8 @@ The playbook implements the following tasks:
 - Step 2: Install pip3 - call apt to install Pythons Software, python3-pip
 - Step 3: Install Docker Python Client - installs the pip package, docker, required to manage Docker containers for Ansible.
 - Step 4: Increase Virtual Memory - uses a command, `sysctl -w vm.max_map_count=262144` to configure the VM to use more memory, required in this case, in order to run the ELK container.
-- Step 5: Download and Launch a Docker ELK Container - 
+- Step 5: Download and Launch a Docker ELK Container - Downloads the Docker conatainer `sebp/elk:761` with port mappings: 5601:5601 9200:9200 5044::5044, and is prompted to be started.
+- Step 6 - Enable Service Docker on boot - uses systemd module on Ansible to enable docker on boot in case a restart is necessary.
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
