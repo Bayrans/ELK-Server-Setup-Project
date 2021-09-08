@@ -26,7 +26,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name                 | Function | IP Address | Operating system |
 |----------------------|----------|------------|------------------|
@@ -39,7 +38,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address(es): 69.232.248.170
+Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address(es): Your Home/Workstation Public IP.
 
 
 Machines within the network can only be accessed by the Jump-Box-Provisioner (10.0.0.4).
@@ -89,11 +88,6 @@ SSH into the control node and follow the steps below:
 - Copy the install-elk.yml file to /etc/ansible/
 - Update the hosts file to include a new group, elk, with the IP address of the machine so it can be called in the hosts field when necessary.
 - Run the playbook, and navigate to http://[your.ELK-VM.External.IP]:5601/app/kibana to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
 ### Extra Commands
 - When editing the hosts file, be sure to add the line following each added IP, `ansible_python_interpreter=/usr/bin/python3`
