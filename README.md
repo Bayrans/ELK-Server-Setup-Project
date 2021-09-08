@@ -61,7 +61,6 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 it allows for automated deployment to provide quick access to duplicate the results if needed, as well as it can be applied accross multiple machines.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - Step 1: Install Docker.io - call apt to install the docker engine, docker.io.
 - Step 2: Install pip3 - call apt to install Pythons Software, python3-pip
 - Step 3: Install Docker Python Client - installs the pip package, docker, required to manage Docker containers for Ansible.
