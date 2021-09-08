@@ -62,8 +62,12 @@ it allows for automated deployment to provide quick access to duplicate the resu
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Step 1: Install Docker.io - call apt to install the docker engine, docker.io.
+- Step 2: Install pip3 - call apt to install Pythons Software, python3-pip
+- Step 3: Install Docker Python Client - installs the pip package, docker, required to manage Docker containers for Ansible.
+- Step 4: Increase Virtual Memory - uses a command, `sysctl -w vm.max_map_count=262144` to configure the VM to use more memory, required in this case, in order to run the ELK container.
+- Step 5: Download and Launch a Docker ELK Container - 
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -74,20 +78,20 @@ This ELK server is configured to monitor the following machines:
 - 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
 - Filebeat
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- `Metricbeat` collects metrics on the machine, like CPU and memory usage data.
+- `Filebeat` collects log files in specified locations, which can be used for file data  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Update the hosts file to include a new group, elk, with the IP address of the machine so it can be called in the hosts field when necessary.
+- Run the playbook, and navigate to http://[your.ELK-VM.External.IP]:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
